@@ -45,9 +45,16 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SymRegFitnessCase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\cs-tree-genetic-programming\cs-tree-genetic-programming.csproj">
+      <Project>{45cc614a-0955-4c5a-ae65-ddde428a4ad0}</Project>
+      <Name>cs-tree-genetic-programming</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

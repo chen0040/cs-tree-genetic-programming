@@ -1,8 +1,11 @@
-obj/
-bin/
+*/obj/*
+*/bin/*/*.exe
+*/bin/*/*.dll
+*/bin/*/*.pdb
+*/bin/*/*.exe.config
 
-*/obj/
-*/bin/
+!cs-tree-genetic-programming-samples/bin/Debug/symreg
+!cs-tree-genetic-programming-samples/bin/Release/symreg
 
 *.user
 

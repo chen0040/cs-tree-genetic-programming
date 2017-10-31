@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<pop_mutate strategy="macro_mutation" >
+
+<strategy name="macro_mutation">
+</strategy>
+
+</pop_mutate>

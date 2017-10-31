@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<selection_config strategy="tournament">
+
+<strategy name="tournament">
+<param name="tournament_size" value="2" />
+</strategy>
+
+</selection_config>
