@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<protected_definition>
+
+<C_undef use="low">
+<param name="low" value="1" />
+<param name="high" value="1000000" />
+</C_undef>
+
+<LGP_REG_POSITIVE_INF value="10000000" />
+<LGP_REG_NEGATIVE_INF value="-10000000" />
+
+</protected_definition>

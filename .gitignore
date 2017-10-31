@@ -6,6 +6,8 @@
 
 !cs-tree-genetic-programming-samples/bin/Debug/symreg
 !cs-tree-genetic-programming-samples/bin/Release/symreg
+!cs-tree-genetic-programming-samples/bin/Debug/*.xml
+!cs-tree-genetic-programming-samples/bin/Release/*.xml
 
 *.user
 
