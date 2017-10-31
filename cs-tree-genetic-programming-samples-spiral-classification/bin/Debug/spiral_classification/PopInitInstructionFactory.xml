@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<pop_init strategy="variable">
+
+<strategy name="variable">
+</strategy>
+
+<strategy name="ramped_variable">
+</strategy>
+
+<strategy name="grow">
+</strategy>
+
+</pop_init>

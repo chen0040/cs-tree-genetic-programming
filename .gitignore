@@ -9,6 +9,13 @@
 !cs-tree-genetic-programming-samples/bin/Debug/*.xml
 !cs-tree-genetic-programming-samples/bin/Release/*.xml
 
+!cs-tree-genetic-programming-samples-spiral-classification/bin/Debug/symreg
+!cs-tree-genetic-programming-samples-spiral-classification/bin/Release/symreg
+!cs-tree-genetic-programming-samples-spiral-classification/bin/Debug/*.xml
+!cs-tree-genetic-programming-samples-spiral-classification/bin/Release/*.xml
+!cs-tree-genetic-programming-samples-spiral-classification/bin/Debug/*.txt
+!cs-tree-genetic-programming-samples-spiral-classification/bin/Release/*.txt
+
 *.user
 
 packages/
