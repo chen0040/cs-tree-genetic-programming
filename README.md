@@ -2,6 +2,12 @@
 
 Tree-based genetic programming implemented using C#
 
+# Install
+
+```bash
+Install-Package cs-tree-genetic-programming -Version 1.0.1
+```
+
 # Usage
 
 Below shows the sample codes in which the symbolic regression is solved using TreeGP. The symbolic regression is trying to find a GP solution that approximate the function y = x^2 + x + 1.
