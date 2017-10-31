@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+
+<configuration>
+<parameters>
+<param name="NumRegisters" value="6" />
+<param name="PopulationSize" value="1000" />
+<param name="Epsilon" value="0.000000001" />
+<param name="MaxGenerations" value="100" />
+<param name="Maximization" value="false" />
+<param name="CrossoverRate" value="0.5" />
+<param name="MacroMutationRate" value="0.25" />
+<param name="MicroMutationRate" value="0.25" />
+<param name="ReproductionRate" value="0.0" />
+<param name="MaxDepthForCrossover" value="7" />
+<param name="MaxDepthForMutation" value="7" />
+<param name="MaxDepthForCreation" value="7" />
+</parameters>
+
+<log_parameters>
+<param name="PopLogInterval" value="50" />
+<param name="PopLogFilePath" value="pop_log" />
+<param name="StatsLogFilePath" value="stats_log" />
+<param name="RunLogFilePath" value="run_log" />
+</log_parameters>
+
+<lgp_scripts>
+<script name="CrossoverInstructionFactory" src="mexican_hat\CrossoverInstructionFactory.xml" />
+<script name="MutationInstructionFactory" src="mexican_hat\MutationInstructionFactory.xml" />
+<script name="PopInitInstructionFactory" src="mexican_hat\PopInitInstructionFactory.xml" />
+<script name="ReproductionSelectionInstructionFactory" src="mexican_hat\ReproductionSelectionInstructionFactory.xml" />
+<script name="SurvivalInstructionFactory" src="mexican_hat\SurvivalInstructionFactory.xml" />
+</lgp_scripts>
+
+</configuration>

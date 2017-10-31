@@ -16,6 +16,11 @@
 !cs-tree-genetic-programming-samples-spiral-classification/bin/Debug/*.txt
 !cs-tree-genetic-programming-samples-spiral-classification/bin/Release/*.txt
 
+!cs-tree-genetic-programming-samples-mexican-hat/bin/Debug/symreg
+!cs-tree-genetic-programming-samples-mexican-hat/bin/Release/symreg
+!cs-tree-genetic-programming-samples-mexican-hat/bin/Debug/*.xml
+!cs-tree-genetic-programming-samples-mexican-hat/bin/Release/*.xml
+
 *.user
 
 packages/
