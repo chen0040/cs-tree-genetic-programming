@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{45CC614A-0955-4C5A-AE65-DDDE428A4AD0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TreeGP</RootNamespace>
+    <AssemblyName>cs-tree-genetic-programming</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlgorithmModels\Crossover\TGPCrossoverInstructionFactory.cs" />
+    <Compile Include="AlgorithmModels\Crossover\TGPCrossoverInstruction_SubtreeBias.cs" />
+    <Compile Include="AlgorithmModels\Crossover\TGPCrossoverInstruction_SubtreeNoBias.cs" />
+    <Compile Include="AlgorithmModels\Mutation\TGPMutationInstructionFactory.cs" />
+    <Compile Include="AlgorithmModels\Mutation\TGPMutationInstruction_Hoist.cs" />
+    <Compile Include="AlgorithmModels\Mutation\TGPMutationInstruction_Kinnear.cs" />
+    <Compile Include="AlgorithmModels\Mutation\TGPMutationInstruction_Shrink.cs" />
+    <Compile Include="AlgorithmModels\Mutation\TGPMutationInstruction_Subtree.cs" />
+    <Compile Include="AlgorithmModels\PopInit\TGPPopInitInstructionFactory.cs" />
+    <Compile Include="AlgorithmModels\PopInit\TGPPopInitInstruction_Full.cs" />
+    <Compile Include="AlgorithmModels\PopInit\TGPPopInitInstruction_Grow.cs" />
+    <Compile Include="AlgorithmModels\PopInit\TGPPopInitInstruction_PTC1.cs" />
+    <Compile Include="AlgorithmModels\PopInit\TGPPopInitInstruction_RampedFull.cs" />
+    <Compile Include="AlgorithmModels\PopInit\TGPPopInitInstruction_RampedGrow.cs" />
+    <Compile Include="AlgorithmModels\PopInit\TGPPopInitInstruction_RampedHalfAndHalf.cs" />
+    <Compile Include="AlgorithmModels\PopInit\TGPPopInitInstruction_RandomBranch.cs" />
+    <Compile Include="AlgorithmModels\Selection\SelectionInstruction_RouletteWheel.cs" />
+    <Compile Include="ComponentModels\Operators\Binary\TGPOperator_And.cs" />
+    <Compile Include="ComponentModels\Operators\Binary\TGPOperator_Division.cs" />
+    <Compile Include="ComponentModels\Operators\Binary\TGPOperator_Minus.cs" />
+    <Compile Include="ComponentModels\Operators\Binary\TGPOperator_Modulo.cs" />
+    <Compile Include="ComponentModels\Operators\Binary\TGPOperator_Multiplication.cs" />
+    <Compile Include="ComponentModels\Operators\Binary\TGPOperator_Or.cs" />
+    <Compile Include="ComponentModels\Operators\Binary\TGPOperator_Plus.cs" />
+    <Compile Include="ComponentModels\Operators\Binary\TGPOperator_Power.cs" />
+    <Compile Include="ComponentModels\Operators\TGPBinaryOperator.cs" />
+    <Compile Include="ComponentModels\Operators\TGPOperator_Default.cs" />
+    <Compile Include="ComponentModels\Operators\TGPOperator_Ifgt.cs" />
+    <Compile Include="ComponentModels\Operators\TGPOperator_Iflt.cs" />
+    <Compile Include="ComponentModels\Operators\TGPTernaryOperator.cs" />
+    <Compile Include="ComponentModels\Operators\TGPUnaryOperator.cs" />
+    <Compile Include="ComponentModels\Operators\UDBinaryOperator.cs" />
+    <Compile Include="ComponentModels\Operators\Unary\TGPOperator_Cos.cs" />
+    <Compile Include="ComponentModels\Operators\Unary\TGPOperator_Exp.cs" />
+    <Compile Include="ComponentModels\Operators\Unary\TGPOperator_Log.cs" />
+    <Compile Include="ComponentModels\Operators\Unary\TGPOperator_Not.cs" />
+    <Compile Include="ComponentModels\Operators\Unary\TGPOperator_Sin.cs" />
+    <Compile Include="ComponentModels\Operators\Unary\TGPOperator_Sqrt.cs" />
+    <Compile Include="ComponentModels\Operators\Unary\TGPOperator_Tan.cs" />
+    <Compile Include="ComponentModels\PrimitiveStatistics.cs" />
+    <Compile Include="ComponentModels\TGPConfig.cs" />
+    <Compile Include="ComponentModels\TGPConstantSet.cs" />
+    <Compile Include="ComponentModels\TGPNode.cs" />
+    <Compile Include="ComponentModels\TGPOperator.cs" />
+    <Compile Include="ComponentModels\TGPOperatorSet.cs" />
+    <Compile Include="ComponentModels\TGPPop.cs" />
+    <Compile Include="ComponentModels\TGPPrimitive.cs" />
+    <Compile Include="ComponentModels\TGPProgram.cs" />
+    <Compile Include="ComponentModels\TGPProtectedDefinition.cs" />
+    <Compile Include="ComponentModels\TGPSolution.cs" />
+    <Compile Include="ComponentModels\TGPTerminal.cs" />
+    <Compile Include="ComponentModels\TGPVariableSet.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Core\AlgorithmModels\Crossover\CrossoverInstruction.cs" />
+    <Compile Include="Core\AlgorithmModels\Crossover\CrossoverInstructionFactory.cs" />
+    <Compile Include="Core\AlgorithmModels\Mutation\MutationInstruction.cs" />
+    <Compile Include="Core\AlgorithmModels\Mutation\MutationInstructionFactory.cs" />
+    <Compile Include="Core\AlgorithmModels\PopInit\PopInitInstruction.cs" />
+    <Compile Include="Core\AlgorithmModels\PopInit\PopInitInstructionFactory.cs" />
+    <Compile Include="Core\AlgorithmModels\Selection\SelectionInstruction.cs" />
+    <Compile Include="Core\AlgorithmModels\Selection\SelectionInstructionFactory.cs" />
+    <Compile Include="Core\AlgorithmModels\Selection\SelectionInstruction_Tournament.cs" />
+    <Compile Include="Core\AlgorithmModels\Survival\SurvivalInstruction.cs" />
+    <Compile Include="Core\AlgorithmModels\Survival\SurvivalInstructionFactory.cs" />
+    <Compile Include="Core\AlgorithmModels\Survival\SurvivalInstruction_Compete.cs" />
+    <Compile Include="Core\AlgorithmModels\Survival\SurvivalInstruction_Probablistic.cs" />
+    <Compile Include="Core\BaseSolution.cs" />
+    <Compile Include="Core\BaseSolver.cs" />
+    <Compile Include="Core\ComponentModels\IGPPop.cs" />
+    <Compile Include="Core\ComponentModels\IGPSolution.cs" />
+    <Compile Include="Core\ComponentModels\IMOOPop.cs" />
+    <Compile Include="Core\ComponentModels\IPop.cs" />
+    <Compile Include="Core\ComponentModels\ISolution.cs" />
+    <Compile Include="Core\ComponentModels\MOOSolution.cs" />
+    <Compile Include="Core\ISolver.cs" />
+    <Compile Include="Core\ProblemModels\IGPEnvironment.cs" />
+    <Compile Include="Core\ProblemModels\IGPFitnessCase.cs" />
+    <Compile Include="Core\ProblemModels\IMOOProblem.cs" />
+    <Compile Include="Core\RandomEngine.cs" />
+    <Compile Include="Distribution\Binomial.cs" />
+    <Compile Include="Distribution\ChiSquare.cs" />
+    <Compile Include="Distribution\DistributionModel.cs" />
+    <Compile Include="Distribution\Erlang.cs" />
+    <Compile Include="Distribution\Exponential.cs" />
+    <Compile Include="Distribution\FDistribution.cs" />
+    <Compile Include="Distribution\Gaussian.cs" />
+    <Compile Include="Distribution\LogNormal.cs" />
+    <Compile Include="Distribution\MultivariateDistributionModel.cs" />
+    <Compile Include="Distribution\Poisson.cs" />
+    <Compile Include="Distribution\StudentT.cs" />
+    <Compile Include="Helpers\Factorial.cs" />
+    <Compile Include="Helpers\Gamma.cs" />
+    <Compile Include="Helpers\LogHelper.cs" />
+    <Compile Include="Helpers\MergeSort.cs" />
+    <Compile Include="Helpers\PolynomialHelper.cs" />
+    <Compile Include="LinearAlgebra\MatrixOp.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpecialFunctions\ClampFunction.cs" />
+    <Compile Include="SpecialFunctions\ErrorFunction.cs" />
+    <Compile Include="SpecialFunctions\GammaFunction.cs" />
+    <Compile Include="SpecialFunctions\InverseErrorFunction.cs" />
+    <Compile Include="SpecialFunctions\InverseLogitFunction.cs" />
+    <Compile Include="SpecialFunctions\LogitFunction.cs" />
+    <Compile Include="Statistics\ANCOVA.cs" />
+    <Compile Include="Statistics\ANCOVAv2.cs" />
+    <Compile Include="Statistics\ANOVA.cs" />
+    <Compile Include="Statistics\Bootstrapping.cs" />
+    <Compile Include="Statistics\ChiSquareGOFTest.cs" />
+    <Compile Include="Statistics\ChiSquareIndependenceTest.cs" />
+    <Compile Include="Statistics\CLT.cs" />
+    <Compile Include="Statistics\CollectionExtensionMethods.cs" />
+    <Compile Include="Statistics\ConfidenceInterval.cs" />
+    <Compile Include="Statistics\Correlation.cs" />
+    <Compile Include="Statistics\DescriptiveStatistics.cs" />
+    <Compile Include="Statistics\HypothesisTesting.cs" />
+    <Compile Include="Statistics\HypothesisTestingForProportion.cs" />
+    <Compile Include="Statistics\LinearCombination.cs" />
+    <Compile Include="Statistics\MANCOVA.cs" />
+    <Compile Include="Statistics\MANOVA.cs" />
+    <Compile Include="Statistics\Mean.cs" />
+    <Compile Include="Statistics\Median.cs" />
+    <Compile Include="Statistics\MultipleComparisons.cs" />
+    <Compile Include="Statistics\Sample.cs" />
+    <Compile Include="Statistics\StandardError.cs" />
+    <Compile Include="Statistics\StdDev.cs" />
+    <Compile Include="Statistics\TwoWayANOVA.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
