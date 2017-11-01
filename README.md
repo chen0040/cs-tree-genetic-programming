@@ -5,7 +5,7 @@ Tree-based genetic programming implemented using C#
 # Install
 
 ```bash
-Install-Package cs-tree-genetic-programming -Version 1.0.2
+Install-Package cs-tree-genetic-programming -Version 1.0.5
 ```
 
 # Usage

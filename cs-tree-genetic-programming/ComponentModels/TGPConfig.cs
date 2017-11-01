@@ -125,11 +125,11 @@ namespace TreeGP.ComponentModels
             set { mPopulationSize = value; }
         }
 
-        private Dictionary<string, string> mScripts = new Dictionary<string, string>();
+        protected Dictionary<string, string> mScripts = new Dictionary<string, string>();
 
         protected string mFilename;
 
-        public string GetScript(string p)
+        public virtual string GetScript(string p)
         {
             if (mScripts.ContainsKey(p))
             {
