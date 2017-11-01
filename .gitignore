@@ -4,10 +4,7 @@
 */bin/*/*.pdb
 */bin/*/*.exe.config
 
-!cs-tree-genetic-programming-samples/bin/Debug/symreg
-!cs-tree-genetic-programming-samples/bin/Release/symreg
-!cs-tree-genetic-programming-samples/bin/Debug/*.xml
-!cs-tree-genetic-programming-samples/bin/Release/*.xml
+cs-tree-genetic-programming-samples/bin
 
 !cs-tree-genetic-programming-samples-spiral-classification/bin/Debug/spiral_classification
 !cs-tree-genetic-programming-samples-spiral-classification/bin/Release/spiral_classification

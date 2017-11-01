@@ -24,11 +24,11 @@
 </log_parameters>
 
 <lgp_scripts>
-<script name="CrossoverInstructionFactory" src="symreg\CrossoverInstructionFactory.xml" />
-<script name="MutationInstructionFactory" src="symreg\MutationInstructionFactory.xml" />
-<script name="PopInitInstructionFactory" src="symreg\PopInitInstructionFactory.xml" />
-<script name="ReproductionSelectionInstructionFactory" src="symreg\ReproductionSelectionInstructionFactory.xml" />
-<script name="SurvivalInstructionFactory" src="symreg\SurvivalInstructionFactory.xml" />
+<script name="CrossoverInstructionFactory" src="TGPConfig\CrossoverInstructionFactory.xml" />
+<script name="MutationInstructionFactory" src="TGPConfig\MutationInstructionFactory.xml" />
+<script name="PopInitInstructionFactory" src="TGPConfig\PopInitInstructionFactory.xml" />
+<script name="ReproductionSelectionInstructionFactory" src="TGPConfig\ReproductionSelectionInstructionFactory.xml" />
+<script name="SurvivalInstructionFactory" src="TGPConfig\SurvivalInstructionFactory.xml" />
 </lgp_scripts>
 
 </configuration>

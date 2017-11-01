@@ -5,7 +5,7 @@ Tree-based genetic programming implemented using C#
 # Install
 
 ```bash
-Install-Package cs-tree-genetic-programming -Version 1.0.1
+Install-Package cs-tree-genetic-programming -Version 1.0.2
 ```
 
 # Usage
@@ -124,6 +124,6 @@ class Program
 } 
 ```
 
-The TGPConfig.xml can be found in the cs-tree-genetic-programming-samples/bin/Debug folder as well as the xml configuration for the various operators in the TreeGP (in the folder cs-tree-genetic-programming-samples/bin/Debug/symreg)
+The TGPConfig.xml and its child configuration files will be automatically generated if they do not exist, otherwise the configuration will be loaded from the existing TGPConfig.xml and its child configuration files.
 
 

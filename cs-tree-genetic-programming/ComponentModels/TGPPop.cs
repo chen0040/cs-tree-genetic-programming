@@ -318,11 +318,11 @@ namespace TreeGP.ComponentModels
             if (mSetup == false)
             {
                 mEnvironment = CreateEnvironment();
-                mMutationInstructionFactory = CreateMutationInstructionFactory(mConfig.GetScript("MutationInstructionFactory"));
-                mCrossoverInstructionFactory = CreateCrossoverInstructionFactory(mConfig.GetScript("CrossoverInstructionFactory"));
-                mPopInitInstructionFactory = CreatePopInitInstructionFactory(mConfig.GetScript("PopInitInstructionFactory"));
-                mReproductionSelectionInstructionFactory = CreateReproductionSelectionInstructionFactory(mConfig.GetScript("ReproductionSelectionInstructionFactory"));
-                mSurvivalInstructionFactory = CreateSurvivalInstructionFactory(mConfig.GetScript("SurvivalInstructionFactory"));
+                mMutationInstructionFactory = CreateMutationInstructionFactory(mConfig.GetScript(ScriptNames.MutationInstructionFactory));
+                mCrossoverInstructionFactory = CreateCrossoverInstructionFactory(mConfig.GetScript(ScriptNames.CrossoverInstructionFactory));
+                mPopInitInstructionFactory = CreatePopInitInstructionFactory(mConfig.GetScript(ScriptNames.PopInitInstructionFactory));
+                mReproductionSelectionInstructionFactory = CreateReproductionSelectionInstructionFactory(mConfig.GetScript(ScriptNames.ReproductionSelectionInstructionFactory));
+                mSurvivalInstructionFactory = CreateSurvivalInstructionFactory(mConfig.GetScript(ScriptNames.SurvivalInstructionFactory));
                 mSetup = true;
             }
         }

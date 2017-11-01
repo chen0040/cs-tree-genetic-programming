@@ -5,6 +5,7 @@ using System.Text;
 
 namespace TreeGP.ComponentModels
 {
+    using System.IO;
     using System.Xml;
 
     /// <summary>
@@ -132,7 +133,33 @@ namespace TreeGP.ComponentModels
         {
             if (mScripts.ContainsKey(p))
             {
-                return mScripts[p];
+                string scriptPath = mScripts[p];
+                if(!File.Exists(scriptPath))
+                {
+                    DirectoryInfo parentDir = Directory.GetParent(scriptPath);
+                    if(!parentDir.Exists)
+                    {
+                        parentDir.Create();
+                    }
+                    if (p == ScriptNames.CrossoverInstructionFactory)
+                    {
+                        File.WriteAllText(scriptPath, Properties.Resources.CrossoverInstructionFactory);
+                    } else if(p == ScriptNames.MutationInstructionFactory)
+                    {
+                        File.WriteAllText(scriptPath, Properties.Resources.MutationInstructionFactory);
+                    } else if(p == ScriptNames.PopInitInstructionFactory)
+                    {
+                        File.WriteAllText(scriptPath, Properties.Resources.PopInitInstructionFactory);
+                    } else if(p == ScriptNames.ReproductionSelectionInstructionFactory)
+                    {
+                        File.WriteAllText(scriptPath, Properties.Resources.ReproductionSelectionInstructionFactory);
+                    } else if(p == ScriptNames.SurvivalInstructionFactory)
+                    {
+                        File.WriteAllText(scriptPath, Properties.Resources.SurvivalInstructionFactory);
+                    }
+
+                }
+                
             }
             return null;
         }
@@ -144,10 +171,21 @@ namespace TreeGP.ComponentModels
 
         public TGPConfig(string filename)
         {
+            if(!File.Exists(filename))
+            {
+                File.WriteAllText(filename, Properties.Resources.TGPConfig);
+            }
+
+            Load(filename);
+
+        }
+
+        public void Load(String filename)
+        {
             mFilename = filename;
             XmlDocument doc = new XmlDocument();
             doc.Load(filename);
-            XmlElement doc_root=doc.DocumentElement;
+            XmlElement doc_root = doc.DocumentElement;
 
             foreach (XmlElement xml_level1 in doc_root.ChildNodes)
             {
@@ -155,7 +193,7 @@ namespace TreeGP.ComponentModels
                 {
                     foreach (XmlElement xml_level2 in xml_level1.ChildNodes)
                     {
-                        if(xml_level2.Name=="param")
+                        if (xml_level2.Name == "param")
                         {
                             string attrname = xml_level2.Attributes["name"].Value;
                             string attrvalue = xml_level2.Attributes["value"].Value;
@@ -201,22 +239,22 @@ namespace TreeGP.ComponentModels
                                 double.TryParse(attrvalue, out value);
                                 mReproductionRate = value;
                             }
-                            else if(attrname=="MaxDepthForCrossover")
+                            else if (attrname == "MaxDepthForCrossover")
                             {
                                 int.TryParse(attrvalue, out mMaximumDepthForCrossover);
                             }
-                            else if(attrname=="MaxDepthForMutation")
+                            else if (attrname == "MaxDepthForMutation")
                             {
                                 int.TryParse(attrvalue, out mMaximumDepthForMutation);
                             }
-                            else if(attrname=="MaxDepthForCreation")
+                            else if (attrname == "MaxDepthForCreation")
                             {
                                 int.TryParse(attrvalue, out mMaximumDepthForCreation);
                             }
                         }
                     }
                 }
-               
+
                 else if (xml_level1.Name == "lgp_scripts")
                 {
                     foreach (XmlElement xml_level2 in xml_level1.ChildNodes)
@@ -232,7 +270,6 @@ namespace TreeGP.ComponentModels
             }
 
             NormalizeEvolutionRates();
-
         }
 
         public double ReproductionRate
